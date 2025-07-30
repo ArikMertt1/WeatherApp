@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <article>
+            <hgroup>
+                <h1>Hava Durumu Sorgulama</h1>
+                <h2>İstediğiniz şehrin hava durumunu anında öğrenin</h2>
+            </hgroup>
+
+            <form action="/weather" method="get">
+                <input type="text" name="city" placeholder="Örn: Karlsruhe, Istanbul..." required>
+                <button type="submit">Sorgula</button>
+            </form>
+
+            {% if error %}
+                <p class="error"><strong>{{ error }}</strong></p>
+            {% endif %}
+
+            {% if data %}
+                <div class="weather-result">
+                    <header>
+                        <img src="http://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="weather icon">
+                        <h2>{{ data.sehir }}</h2>
+                    </header>
+                    <p><strong>Açıklama:</strong> {{ data.aciklama }}</p>
+                    <p><strong>Sıcaklık:</strong> {{ data.sicaklik }} °C</p>
+                    <p><strong>Hissedilen:</strong> {{ data.hissedilen }} °C</p>
+                </div>
+            {% endif %}
+        </article>
+    </main>
+</body>
+</html>

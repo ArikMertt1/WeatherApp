@@ -1,0 +1,13 @@
+# Gizli dosyalar (Secrets)
+.env
+
+# Sanal Ortam (Virtual Environment)
+venv/
+.venv/
+
+# Python Önbellek Dosyaları (Cache)
+__pycache__/
+*.pyc
+
+# IDE Ayar Dosyaları (PyCharm)
+.idea/
