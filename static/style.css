@@ -30,7 +30,7 @@ h1 {
 
     .container {
         padding: 1.5rem;
-        margin: 1rem;
+        margin: 1rem auto;
     }
 
     h1 {
