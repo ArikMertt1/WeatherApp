@@ -1,0 +1,43 @@
+body {
+    background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+}
+
+.container {
+    max-width: 500px;
+}
+
+.error {
+    color: #b71c1c;
+}
+
+.weather-result header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+h1 {
+    margin-bottom: 0.25rem;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding-top: 2rem;
+    }
+
+    .container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+}
